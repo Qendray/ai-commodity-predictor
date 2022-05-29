@@ -1,4 +1,3 @@
-# pip install streamlit fbprophet yfinance plotly
 import streamlit as st
 from datetime import date
  
@@ -13,11 +12,11 @@ TODAY = date.today().strftime("%Y-%m-%d")
 st.title("AI CPP")
 
 commodities = ("CL=F","^N225","PL=F","HG=F","GC=F","BTI")
-selected_commodities = st.selectbox("Select dataset for predicion",commodities)
+selected_commodities = st.selectbox("Select dataset for prediction",commodities)
 
 n_years = st.slider("Years of prediction",1,4)
 period = n_years * 365
-
+buffer = _builtin_open(filename, 'rb')
 @st.cache
 def load_data(ticker):
     data = yf.downloader(ticker, START, TODAY)
